@@ -221,7 +221,7 @@ export default function Home() {
 
       {isGameStarted && <div>
         <button type="button" className="submitButton" onClick={toggleTableCollapse}>
-          {isTableCollapsed ? 'Expand Table' : 'Collapse Table'}
+          {isTableCollapsed ? 'Open scoreboard' : 'Close scoreboard'}
         </button>
         {!isTableCollapsed && (
           <table style={{ borderCollapse: 'separate', width: '80%', marginTop: '5%', marginLeft: '5%' }}>
