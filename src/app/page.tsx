@@ -23,8 +23,16 @@ export default function Home() {
 
     if (savedPlayers) setPlayers(JSON.parse(savedPlayers));
     if (savedTableData) setTableData2(JSON.parse(savedTableData));
-    if (savedRoundNumber !== 'undefined') setRoundNumber(JSON.parse(savedRoundNumber)) || setRoundNumber(0); 
-    if (savedIsGameStarted !== 'undefined') setIsGameStarted(JSON.parse(savedIsGameStarted)) || setIsGameStarted(false);
+    if (savedRoundNumber !== null && savedRoundNumber !== 'undefined') {
+      setRoundNumber(JSON.parse(savedRoundNumber));
+    }else{
+      setRoundNumber(0); 
+    }
+    if (savedIsGameStarted !== null && savedIsGameStarted !== 'undefined') {
+      setIsGameStarted(JSON.parse(savedIsGameStarted));
+    }else{
+      setIsGameStarted(false);
+    }
   }, []);
 
   // Save state to localStorage whenever it changes
